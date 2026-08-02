@@ -1,384 +1,832 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HN Stem Tutor | Premium STEM Tutoring Academy</title>
-  <meta name="description" content="HN Stem Tutor — Premium STEM tutoring for school and college students in DHA Lahore and online." />
-  <meta name="theme-color" content="#1a2332" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --navy:#1a2332;
-      --gold:#c9a84c;
-      --teal:#0d9488;
-      --light:#f8f9fb;
-      --dark:#111827;
-      --muted:#6b7280;
-      --white:#ffffff;
-      --max:1150px;
-      --radius:16px;
-      --shadow:0 16px 40px rgba(0,0,0,.08);
-      --shadow-strong:0 24px 60px rgba(0,0,0,.14);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HN Stem - Premium STEM Tutoring Academy | DHA Lahore</title>
+    <meta name="description" content="Premium STEM tutoring for students in DHA Lahore. Personalized 1-on-1 sessions with concept-based learning approach.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --font-heading: "Playfair Display", serif;
+            --font-body: "Inter", sans-serif;
+            --color-gold: oklch(0.72 0.1 80);
+            --color-teal: oklch(0.72 0.15 160);
+            --color-dark: oklch(0.15 0.02 255);
+            --color-light: oklch(0.99 0.002 80);
+            --color-text-primary: oklch(0.22 0.03 255);
+            --color-text-secondary: oklch(0.55 0.02 80);
+            --color-border: oklch(0.90 0.005 80);
+        }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"DM Sans",system-ui,sans-serif;
-      color:var(--dark);
-      background:var(--white);
-      line-height:1.6;
-    }
+        * {
+            font-family: var(--font-body);
+        }
 
-    h1,h2,h3{margin:0 0 .6rem; font-family:"Playfair Display",serif; line-height:1.15; color:var(--navy)}
-    p{margin:0 0 1rem}
-    a{color:inherit}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+        }
 
-    .container{max-width:var(--max);margin:auto;padding:0 20px}
-    .section{padding:80px 0}
-    .section.alt{background:var(--light)}
-    .tag{
-      display:inline-block;
-      font-size:.82rem;
-      font-weight:800;
-      letter-spacing:.1em;
-      text-transform:uppercase;
-      color:var(--teal);
-      margin-bottom:12px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .nav-wrap{
-      position:sticky; top:0; z-index:1000;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid #eceff4;
-    }
-    .nav{min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .brand{
-      font-family:"Playfair Display",serif;
-      font-size:1.6rem;
-      font-weight:700;
-      color:var(--navy);
-      text-decoration:none;
-      white-space:nowrap;
-    }
-    .brand span{color:var(--gold)}
-    .nav-links{display:flex; gap:20px; flex-wrap:wrap; justify-content:flex-end}
-    .nav-links a{text-decoration:none; color:var(--navy); font-weight:700; font-size:.95rem}
-    .nav-links a:hover{color:var(--gold)}
+        .container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-    .hero{
-      background:
-        linear-gradient(rgba(26,35,50,.86), rgba(26,35,50,.86)),
-        radial-gradient(circle at 20% 20%, rgba(13,148,136,.28), transparent 35%),
-        radial-gradient(circle at 80% 30%, rgba(201,168,76,.22), transparent 35%),
-        #1a2332;
-      color:var(--white);
-      padding:110px 0 90px;
-    }
-    .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:30px; align-items:center}
-    .hero h1{color:var(--white); font-size:clamp(2.2rem,4vw,3.8rem); max-width:760px}
-    .hero p{max-width:700px; color:#e5e7eb; font-size:1.08rem; margin:12px 0 28px}
-    .cta-row{display:flex; gap:14px; flex-wrap:wrap}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 20px;
-      border-radius:10px;
-      font-weight:800;
-      text-decoration:none;
-      border:2px solid transparent;
-      transition:.2s ease;
-    }
-    .btn.primary{background:var(--gold); color:#231f11}
-    .btn.primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-strong)}
-    .btn.outline{border-color:#ffffff66; color:var(--white); background:transparent}
-    .btn.outline:hover{background:#ffffff12}
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: #D4A574;
+            padding: 0.875rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 10px 15px -3px rgba(212, 165, 116, 0.2);
+        }
 
-    .hero-panel{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:22px;
-      padding:24px;
-      box-shadow:var(--shadow-strong);
-    }
-    .hero-panel .mini{display:grid; gap:14px}
-    .mini-card{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      padding:16px;
-    }
-    .mini-card strong{display:block; font-size:1rem; margin-bottom:4px; color:#fff}
-    .mini-card span{color:#e5e7eb; font-size:.95rem}
+        .btn-primary:hover {
+            background-color: #e0b583;
+        }
 
-    .grid{display:grid; gap:20px}
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .card{
-      background:#fff;
-      border:1px solid #eceff4;
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-    .card h3{font-size:1.18rem; margin-bottom:8px}
-    .muted{color:var(--muted)}
-    .list{margin:12px 0 0; padding-left:18px}
-    .list li{margin:6px 0}
-    .accent{color:var(--teal); font-weight:800}
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.875rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
 
-    .stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:24px}
-    .stat{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      padding:16px;
-    }
-    .stat strong{display:block; color:#fff; font-size:1.25rem}
-    .stat span{color:#dbe3ee; font-size:.95rem}
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
-    .feature{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      padding:18px;
-      border-radius:16px;
-      background:#fff;
-      border:1px solid #e7edf5;
-    }
-    .dot{
-      width:12px; height:12px; border-radius:999px; margin-top:7px; flex:0 0 auto;
-      background:var(--gold);
-      box-shadow:0 0 0 5px rgba(201,168,76,.15);
-    }
+        .gold-text {
+            color: #D4A574;
+        }
 
-    .cta-band{
-      background:var(--navy);
-      color:#eef2ff;
-      border-radius:18px;
-      padding:38px;
-      text-align:center;
-    }
-    .cta-band h2{color:#fff}
-    .cta-band p{max-width:700px; margin:8px auto 20px}
+        .teal-text {
+            color: #7dd3c0;
+        }
 
-    .contact p{margin:.35rem 0}
-    .contact strong{color:var(--navy)}
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    footer{
-      background:#0f172a;
-      color:#cbd5e1;
-      padding:32px 0;
-      margin-top:50px;
-    }
-    .footer-row{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center}
-    .footer-links{display:flex; gap:14px; flex-wrap:wrap}
-    .footer-links a{color:#cbd5e1; text-decoration:none}
-    .footer-links a:hover{color:var(--gold)}
-
-    @media (max-width: 900px){
-      .grid-3,.stats,.hero-grid{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width: 700px){
-      .nav{height:auto; padding:14px 0; align-items:flex-start; flex-direction:column; gap:10px}
-      .nav-links{justify-content:flex-start; gap:14px}
-      .grid-2,.grid-3,.stats,.hero-grid{grid-template-columns:1fr}
-      .section{padding:65px 0}
-      .hero{padding:88px 0 72px}
-      .cta-band{padding:26px}
-    }
-  </style>
+        .animate-fade-up {
+            animation: fade-up 0.6s ease-out;
+        }
+    </style>
 </head>
-<body>
-  <header class="nav-wrap">
-    <nav class="nav container">
-      <a href="#home" class="brand">HN <span>Stem</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#why">Why Us</a>
-        <a href="#experience">Experience</a>
-        <a href="#how">How It Works</a>
-        <a href="#contact">Contact</a>
-      </div>
+<body class="bg-white text-gray-900">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div class="container flex items-center justify-between h-16">
+            <a href="/" class="flex items-center gap-2 font-bold text-xl">
+                <span class="gold-text">HN</span>
+                <span>Stem</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <button onclick="scrollToSection('#about')" class="text-sm font-medium text-gray-600 hover:text-yellow-600 transition-colors">About</button>
+                <button onclick="scrollToSection('#services')" class="text-sm font-medium text-gray-600 hover:text-yellow-600 transition-colors">Services</button>
+                <button onclick="scrollToSection('#whyus')" class="text-sm font-medium text-gray-600 hover:text-yellow-600 transition-colors">Why Us</button>
+                <button onclick="scrollToSection('#contact')" class="text-sm font-medium text-gray-600 hover:text-yellow-600 transition-colors">Contact</button>
+                <a href="https://forms.gle/nScVZSr5XipsysVy7" target="_blank" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">
+                    Free Trial Class
+                </a>
+            </div>
+
+            <button class="md:hidden" onclick="toggleMobileMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div>
-        <h1>Premium <span class="accent">STEM</span> Tutoring Academy</h1>
-        <p>
-          Welcome to <strong>HN Stem Tutor</strong> — concept-based and personalized tutoring
-          for school and college students in <strong>DHA Lahore</strong> and online.
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdTqWbQFfLpJfJbFJQn8x5ZjJQn8x5ZjJQn8x5ZjJ/viewform" target="_blank" rel="noopener">Book Free Trial Class</a>
-          <a class="btn outline" href="https://wa.me/923134726441" target="_blank" rel="noopener">WhatsApp Me</a>
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663864553230/TjNknTnEMfRXfoMp.jpg" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"></div>
         </div>
-        <div class="stats">
-          <div class="stat"><strong>1-on-1</strong><span>Personalized support</span></div>
-          <div class="stat"><strong>Online</strong><span>Flexible sessions</span></div>
-          <div class="stat"><strong>Free Trial</strong><span>Start risk-free</span></div>
+
+        <div class="container relative z-10 pt-28 pb-24">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 px-4 py-2 mb-8">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                        <path d="M22 10v6m0 0a8 8 0 0 1-15.996.004m0 0v-6m15.996 6H2.004M2 20v-6m0 0a8 8 0 0 0 15.996.004m0 0v6"></path>
+                    </svg>
+                    <span class="text-sm font-medium text-white/90">Premium STEM Tutoring</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    Master <span class="teal-text">STEM</span> Concepts with <span class="gold-text">HN Stem</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-white/75 leading-relaxed mb-10 max-w-2xl">
+                    Personalized 1-on-1 tutoring from a young expert who understands your child's generation. Concept-based learning. Real results.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mb-16">
+                    <a href="https://forms.gle/nScVZSr5XipsysVy7" target="_blank" class="btn-primary">
+                        Book Your Free Trial Class
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <button onclick="scrollToSection('#about')" class="btn-secondary">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap gap-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full gold-text" style="background-color: #D4A574;"></div>
+                        <p class="text-sm text-white/80">Beacon House, DPS, LGS</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full teal-text" style="background-color: #7dd3c0;"></div>
+                        <p class="text-sm text-white/80">Concept-Based Approach</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full gold-text" style="background-color: #D4A574;"></div>
+                        <p class="text-sm text-white/80">Online & In-Person</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <aside class="hero-panel">
-        <div class="mini">
-          <div class="mini-card"><strong>Who it’s for</strong><span>Students from Classes 1–10, O/A Levels, and entry test prep.</span></div>
-          <div class="mini-card"><strong>Teaching style</strong><span>Clear concepts, practice, and exam-focused guidance.</span></div>
-          <div class="mini-card"><strong>Languages</strong><span>English and Urdu support for better understanding.</span></div>
+
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <path d="M0 40L48 35C96 30 192 20 288 25C384 30 480 50 576 55C672 60 768 50 864 42.5C960 35 1056 30 1152 32.5C1248 35 1344 45 1392 50L1440 55V80H1392C1344 80 1248 80 1152 80C1056 80 960 80 864 80C768 80 672 80 576 80C480 80 384 80 288 80C192 80 96 80 48 80H0V40Z" fill="white"/>
+            </svg>
         </div>
-      </aside>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="about">
-    <div class="container grid grid-2">
-      <div>
-        <span class="tag">Meet Your Tutor</span>
-        <h2>Muhammad Hassan</h2>
-        <p class="muted">I’m a STEM tutor from Lahore, Pakistan, helping students learn with confidence through clear concepts, practice, and consistent support.</p>
-        <p class="muted">I started HN Stem Tutor to make quality tutoring more focused, student-friendly, and practical for real exam success.</p>
-      </div>
-      <div class="card">
-        <h3>Qualifications & Teaching Style</h3>
-        <ul class="list muted">
-          <li>BS Food Science & Technology</li>
-          <li>CGPA: 3.45</li>
-          <li>Pre-Medical: A+</li>
-          <li>Concept-first teaching, not rote learning</li>
-          <li>Simple explanations in English + Urdu</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 lg:py-32 bg-white">
+        <div class="container">
+            <div class="text-center mb-16">
+                <p class="text-sm font-semibold uppercase tracking-widest gold-text mb-3">Meet Your STEM Expert</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Muhammad Hassan</h2>
+                <p class="text-base text-gray-600 max-w-xl mx-auto">Founder & Lead Tutor at HN Stem</p>
+            </div>
 
-  <section class="section alt" id="services">
-    <div class="container">
-      <span class="tag">Services</span>
-      <h2>Programs We Offer</h2>
-      <div class="grid grid-3" style="margin-top:20px">
-        <div class="card"><h3>Classes 1–5</h3><p class="muted">Strong foundation in core STEM subjects.</p></div>
-        <div class="card"><h3>Classes 6–8</h3><p class="muted">Concept building and structured preparation.</p></div>
-        <div class="card"><h3>Classes 9–10 (Matric)</h3><p class="muted">Board-focused preparation with clarity.</p></div>
-        <div class="card"><h3>O Levels (All Subjects)</h3><p class="muted">Comprehensive academic support.</p></div>
-        <div class="card"><h3>A Levels (Pre-Medical)</h3><p class="muted">Focused guidance for advanced topics.</p></div>
-        <div class="card"><h3>Entry Test (MDCAT / ECAT)</h3><p class="muted">Targeted prep with practice strategy.</p></div>
-      </div>
-    </div>
-  </section>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="relative flex justify-center">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-sm">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663864553230/fFpwFCFQehYafNQz.jpg" alt="Muhammad Hassan - HN Stem Founder" class="w-full h-96 object-cover object-center">
+                    </div>
+                    <div class="absolute -bottom-5 right-0 lg:right-4 bg-white rounded-xl shadow-xl p-4 border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-full" style="background-color: rgba(212, 165, 116, 0.15); display: flex; align-items: center; justify-content: center;">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">BS Food Science</p>
+                                <p class="text-xs text-gray-600">Minhaj University Lahore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <section class="section" id="why">
-    <div class="container">
-      <span class="tag">Why Choose HN Stem</span>
-      <h2>Student-Centered Learning Experience</h2>
-      <div class="grid grid-3" style="margin-top:20px">
-        <div class="feature"><span class="dot"></span><div><h3>Concept-Based Learning</h3><p class="muted">Understand the why, not just the answer.</p></div></div>
-        <div class="feature"><span class="dot"></span><div><h3>Personalized 1-on-1 Sessions</h3><p class="muted">Lessons matched to your pace and goals.</p></div></div>
-        <div class="feature"><span class="dot"></span><div><h3>Experienced Educator</h3><p class="muted">Support from someone who understands student needs.</p></div></div>
-        <div class="feature"><span class="dot"></span><div><h3>Flexible Scheduling</h3><p class="muted">Choose timings that fit your routine.</p></div></div>
-        <div class="feature"><span class="dot"></span><div><h3>Free Trial Class</h3><p class="muted">Try before you commit.</p></div></div>
-        <div class="feature"><span class="dot"></span><div><h3>Progress Reports</h3><p class="muted">Track improvement with regular feedback.</p></div></div>
-      </div>
-    </div>
-  </section>
+                <div>
+                    <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Young STEM Educator</h3>
+                    <p class="text-base leading-relaxed text-gray-700 mb-6">
+                        I am Muhammad Hassan, a passionate STEM educator dedicated to making science accessible and engaging for every student. I have experience teaching students from Beacon House, DHAes (DHA Education System), LGS, and Punjab Board — understanding the unique challenges students face and how to overcome them through personalized, concept-based learning.
+                    </p>
 
-  <section class="section alt" id="experience">
-    <div class="container">
-      <span class="tag">Experience & Schools</span>
-      <h2>Schools Students I’ve Taught</h2>
-      <div class="grid grid-2" style="margin-top:20px">
-        <div class="card">
-          <ul class="list muted">
-            <li>Beacon House</li>
-            <li>DHAes (DHA Education System)</li>
-            <li>LGS</li>
-            <li>Punjab Board</li>
-          </ul>
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Why I Started HN Stem</h4>
+                        <p class="text-base leading-relaxed text-gray-600">
+                            I believe every student deserves personalized attention and a tutor who truly understands their generation. Traditional tutoring often focuses on rote memorization. HN Stem is different — we build deep conceptual understanding that lasts beyond exams.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <h4 class="text-base font-semibold text-gray-900 mb-4">My Commitment</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mt-0.5 flex-shrink-0">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="text-sm text-gray-700">Personalized learning plans for every student</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mt-0.5 flex-shrink-0">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="text-sm text-gray-700">Concept-based teaching, not memorization</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mt-0.5 flex-shrink-0">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="text-sm text-gray-700">Regular progress tracking and updates</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mt-0.5 flex-shrink-0">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="text-sm text-gray-700">Flexible scheduling (online & in-person)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <h3>Roles</h3>
-          <ul class="list muted">
-            <li>Educational Prime Academy</li>
-            <li>Home Tutor (DHA Lahore + Online)</li>
-          </ul>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section id="whyus" class="py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50">
+        <div class="container">
+            <div class="text-center mb-16">
+                <p class="text-sm font-semibold uppercase tracking-widest gold-text mb-3">Why Choose HN Stem?</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Three Core Pillars</h2>
+                <p class="text-base text-gray-600 max-w-2xl mx-auto">That set HN Stem apart from traditional tutoring</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="rounded-xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Young Expertise</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">I understand your child because I'm close to their generation. Relatable, modern teaching approach that resonates with students.</p>
+                </div>
+
+                <div class="rounded-xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <path d="M12 1v6m0 6v6"></path>
+                            <path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path>
+                            <path d="M1 12h6m6 0h6"></path>
+                            <path d="M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Concept-Based Learning</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Master the concepts, not memorization. Your child will truly understand STEM subjects, not just pass exams.</p>
+                </div>
+
+                <div class="rounded-xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Personalized Approach</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Every student is unique. I create customized learning paths tailored to your child's strengths, weaknesses, and pace.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="how">
-    <div class="container">
-      <span class="tag">How It Works</span>
-      <h2>Start in 3 Simple Steps</h2>
-      <div class="grid grid-3" style="margin-top:20px">
-        <div class="card"><h3>1) Book Free Trial</h3><p class="muted">Fill out the enrollment form.</p></div>
-        <div class="card"><h3>2) Trial Session</h3><p class="muted">Attend a trial class and discuss your goals.</p></div>
-        <div class="card"><h3>3) Begin Classes</h3><p class="muted">Choose a schedule and start learning.</p></div>
-      </div>
-    </div>
-  </section>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 lg:py-32 bg-white">
+        <div class="container">
+            <div class="text-center mb-16">
+                <p class="text-sm font-semibold uppercase tracking-widest gold-text mb-3">Comprehensive Services</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Tailored STEM Education</h2>
+                <p class="text-base text-gray-600 max-w-2xl mx-auto">For every level and learning style</p>
+            </div>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="cta-band">
-        <h2>Ready to Start?</h2>
-        <p>Book your free trial class today and begin your STEM journey with confidence.</p>
-        <div class="cta-row" style="justify-content:center">
-          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdTqWbQFfLpJfJbFJQn8x5ZjJQn8x5ZjJQn8x5ZjJ/viewform" target="_blank" rel="noopener">Enroll Now</a>
-          <a class="btn outline" href="https://wa.me/923134726441" target="_blank" rel="noopener">WhatsApp</a>
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Academic Levels</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 hover:shadow-lg transition-shadow">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mb-4">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">Classes 1-10</h4>
+                        <p class="text-sm text-gray-600 mb-3">All Subjects</p>
+                        <p class="text-sm text-gray-700">Foundation building with concept clarity</p>
+                    </div>
+
+                    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 hover:shadow-lg transition-shadow">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mb-4">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">O Levels</h4>
+                        <p class="text-sm text-gray-600 mb-3">All Subjects</p>
+                        <p class="text-sm text-gray-700">Exam-focused, concept-driven preparation</p>
+                    </div>
+
+                    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 hover:shadow-lg transition-shadow">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mb-4">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <path d="M12 1v6m0 6v6"></path>
+                            <path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path>
+                            <path d="M1 12h6m6 0h6"></path>
+                            <path d="M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+                        </svg>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">A Levels</h4>
+                        <p class="text-sm text-gray-600 mb-3">Science Subjects</p>
+                        <p class="text-sm text-gray-700">Advanced STEM for university readiness</p>
+                    </div>
+
+                    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 hover:shadow-lg transition-shadow">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mb-4">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">Pre-Medical</h4>
+                        <p class="text-sm text-gray-600 mb-3">Science Subjects</p>
+                        <p class="text-sm text-gray-700">Intensive preparation for medical entrance</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Learning Formats</h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 hover:shadow-lg transition-shadow">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mb-4">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">Online Tutoring</h4>
+                        <p class="text-sm text-gray-600 mb-3">All Levels</p>
+                        <p class="text-sm text-gray-700">Flexible, convenient, one-on-one sessions</p>
+                    </div>
+
+                    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 hover:shadow-lg transition-shadow">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text mb-4">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">In-Person Tutoring</h4>
+                        <p class="text-sm text-gray-600 mb-3">All Levels</p>
+                        <p class="text-sm text-gray-700">Home-based, personalized attention</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 bg-gradient-to-r from-yellow-50 to-teal-50 p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Serving Areas</h3>
+                <div class="grid md:grid-cols-4 gap-4 mb-6">
+                    <div class="flex items-center gap-3 text-gray-900">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span class="font-medium">DHA Lahore</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-900">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <span class="font-medium">Lake City Meadows</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-900">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span class="font-medium">State Life</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-900">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span class="font-medium">Punjab Society</span>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-gray-600">& Surrounding Areas | Online Tutoring Available Nationwide</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section contact" id="contact">
-    <div class="container grid grid-2">
-      <div>
-        <span class="tag">Contact</span>
-        <h2>Let’s Connect</h2>
-        <p><strong>Phone / WhatsApp:</strong> +92 313 4726441</p>
-        <p><strong>Email:</strong> hassan.HNstem@gmail.com</p>
-        <p><strong>Location:</strong> DHA Lahore</p>
-        <p><strong>Service Areas:</strong> DHA Lahore, Beacon House, DHAes, LGS, Punjab Board students (home + online)</p>
-        <p><strong>Languages:</strong> English, Urdu</p>
-      </div>
-      <div class="card">
-        <h3>Quick Actions</h3>
-        <p class="muted">Use these links to get started now:</p>
-        <div class="cta-row">
-          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdTqWbQFfLpJfJbFJQn8x5ZjJQn8x5ZjJQn8x5ZjJ/viewform" target="_blank" rel="noopener">Book Free Trial</a>
-          <a class="btn outline" style="color:var(--navy); border-color:#d1d5db" href="https://wa.me/923134726441" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    <!-- TRACK RECORD SECTION -->
+    <section class="py-24 lg:py-32 bg-gray-50">
+        <div class="container">
+            <div class="text-center mb-16">
+                <p class="text-sm font-semibold uppercase tracking-widest gold-text mb-3">My Experience</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Schools Students I've Taught</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="rounded-xl border border-gray-200 bg-white p-8">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                                <circle cx="12" cy="8" r="4"></circle>
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Teaching Experience</h3>
+                    </div>
+                    <p class="text-base leading-relaxed text-gray-700 mb-6">
+                        I've had the opportunity to teach students from some of Lahore's most respected institutions — Beacon House, DHAes (DHA Education system), LGS, and Punjab Board. Through hands-on home and academy tutoring, I help students build genuine understanding, not just exam-ready answers.
+                    </p>
+                    <blockquote class="border-l-4 border-yellow-600 pl-4 italic text-gray-600">
+                        "My focus is on building deep conceptual understanding of STEM subjects — that's what leads to genuine learning and long-term academic success."
+                    </blockquote>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="rounded-xl border border-gray-200 bg-white p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900">Schools Students Taught</h4>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="w-1.5 h-1.5 rounded-full gold-text" style="background-color: #D4A574;"></span>
+                                Beacon House System
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="w-1.5 h-1.5 rounded-full gold-text" style="background-color: #D4A574;"></span>
+                                DHAes (DHA Education System)
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="w-1.5 h-1.5 rounded-full gold-text" style="background-color: #D4A574;"></span>
+                                LGS
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="w-1.5 h-1.5 rounded-full gold-text" style="background-color: #D4A574;"></span>
+                                Punjab Board
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="rounded-xl border border-gray-200 bg-white p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900">Teaching Methods</h4>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="w-1.5 h-1.5 rounded-full gold-text" style="background-color: #D4A574;"></span>
+                                Concept-Based Teaching
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="w-1.5 h-1.5 rounded-full gold-text" style="background-color: #D4A574;"></span>
+                                Personalized Learning Plans
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="w-1.5 h-1.5 rounded-full gold-text" style="background-color: #D4A574;"></span>
+                                Regular Progress Updates
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="w-1.5 h-1.5 rounded-full gold-text" style="background-color: #D4A574;"></span>
+                                Student-Focused Approach
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="container footer-row">
-      <div>
-        <strong style="font-family:'Playfair Display',serif;font-size:1.2rem">HN Stem</strong><br />
-        <small>© <span id="yr"></span> HN Stem Tutor. All rights reserved.</small>
-      </div>
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#why">Why Us</a>
-        <a href="#experience">Experience</a>
-        <a href="#how">How It Works</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </footer>
+    <!-- HOW IT WORKS SECTION -->
+    <section class="py-24 lg:py-32 bg-white">
+        <div class="container">
+            <div class="text-center mb-16">
+                <p class="text-sm font-semibold uppercase tracking-widest gold-text mb-3">How It Works</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Simple, Transparent, and Student-Focused</h2>
+            </div>
 
-  <script>
-    document.getElementById("yr").textContent = new Date().getFullYear();
-  </script>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex gap-8 mb-12">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 rounded-full" style="background-color: rgba(212, 165, 116, 0.1); border: 2px solid #D4A574; display: flex; align-items: center; justify-content: center;">
+                            <span class="text-2xl font-bold gold-text">01</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Book Free Trial</h3>
+                        <p class="text-base text-gray-600 mb-4">Schedule your free trial class. No commitment, no pressure.</p>
+                        <a href="https://forms.gle/nScVZSr5XipsysVy7" target="_blank" class="btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.875rem;">
+                            Book Your Free Trial Class Now
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ml-8 mb-8 h-12 border-l-2 border-dashed border-gray-300"></div>
+
+                <div class="flex gap-8 mb-12">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 rounded-full" style="background-color: rgba(212, 165, 116, 0.1); border: 2px solid #D4A574; display: flex; align-items: center; justify-content: center;">
+                            <span class="text-2xl font-bold gold-text">02</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Assessment & Plan</h3>
+                        <p class="text-base text-gray-600">I assess your child's strengths and create a personalized learning roadmap.</p>
+                    </div>
+                </div>
+
+                <div class="ml-8 mb-8 h-12 border-l-2 border-dashed border-gray-300"></div>
+
+                <div class="flex gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 rounded-full" style="background-color: rgba(212, 165, 116, 0.1); border: 2px solid #D4A574; display: flex; align-items: center; justify-content: center;">
+                            <span class="text-2xl font-bold gold-text">03</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Personalized Learning</h3>
+                        <p class="text-base text-gray-600">Begin regular sessions tailored to your child's pace and learning style.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-24 lg:py-32 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div class="container text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Ready to Transform Your Child's STEM Learning?</h2>
+            <p class="text-lg text-white/75 mb-8 max-w-2xl mx-auto">Book your free trial class today. Let's discover your child's potential together.</p>
+            <a href="https://forms.gle/nScVZSr5XipsysVy7" target="_blank" class="btn-primary">
+                Book Your Free Trial Class Now
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 lg:py-32 bg-gray-50">
+        <div class="container">
+            <div class="text-center mb-16">
+                <p class="text-sm font-semibold uppercase tracking-widest gold-text mb-3">Get in Touch</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Connect with HN Stem</h2>
+                <p class="text-base text-gray-600 max-w-2xl mx-auto">Ready to start? Reach out through any of these channels.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <a href="https://wa.me/923134726441" target="_blank" class="rounded-xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all hover:border-yellow-600">
+                    <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">WhatsApp</h3>
+                    <p class="text-sm text-gray-600 mb-4">+923134726441</p>
+                    <div class="flex items-center gap-2 text-sm font-semibold gold-text">
+                        Chat Now
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="mailto:hassan.HNstem@gmail.com" class="rounded-xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all hover:border-yellow-600">
+                    <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Email</h3>
+                    <p class="text-sm text-gray-600 mb-4">hassan.HNstem@gmail.com</p>
+                    <div class="flex items-center gap-2 text-sm font-semibold gold-text">
+                        Send Email
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <button onclick="scrollToSection('#services')" class="rounded-xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all hover:border-yellow-600">
+                    <div class="w-12 h-12 rounded-lg" style="background-color: rgba(212, 165, 116, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Service Areas</h3>
+                    <p class="text-sm text-gray-600 mb-4">DHA, Lake City Meadows, Punjab Society & more</p>
+                    <div class="flex items-center gap-2 text-sm font-semibold gold-text">
+                        View Details
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 bg-white p-8 mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Enrollment Form</h3>
+                <p class="text-base text-gray-600 mb-6">Fill out this form to get started. We'll review your information and contact you shortly.</p>
+                <a href="https://forms.gle/nScVZSr5XipsysVy7" target="_blank" class="btn-primary">
+                    Open Enrollment Form
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 bg-gradient-to-r from-yellow-50 to-teal-50 p-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">Service Areas</h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="flex items-center gap-3">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span class="font-medium text-gray-900">DHA Lahore</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <span class="font-medium text-gray-900">Lake City Meadows</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span class="font-medium text-gray-900">State Life</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span class="font-medium text-gray-900">Punjab Society</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container py-16">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 font-bold text-xl mb-4">
+                        <span class="gold-text">HN</span>
+                        <span>Stem</span>
+                    </div>
+                    <p class="text-sm text-white/70">Premium STEM tutoring for DHA Lahore and surrounding areas.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="scrollToSection('#about')" class="text-sm text-white/70 hover:text-white transition-colors">About</button></li>
+                        <li><button onclick="scrollToSection('#services')" class="text-sm text-white/70 hover:text-white transition-colors">Services</button></li>
+                        <li><button onclick="scrollToSection('#whyus')" class="text-sm text-white/70 hover:text-white transition-colors">Why Us</button></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://wa.me/923134726441" target="_blank" class="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                +923134726441
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:hassan.HNstem@gmail.com" class="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg>
+                                hassan.HNstem@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Service Areas</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-white/70">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            DHA Lahore
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-white/70">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Lake City Meadows
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-white/70">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            State Life
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-white/70">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Punjab Society
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <p class="text-sm text-white/60">© 2026 HN Stem. All rights reserved.</p>
+                    <p class="text-sm text-white/60">Made with <span class="gold-text">❤</span> by Muhammad Hassan</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function toggleMobileMenu() {
+            // Add mobile menu functionality here
+        }
+    </script>
 </body>
 </html>
