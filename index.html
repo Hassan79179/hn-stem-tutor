@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HN Stem Tutor | Premium STEM Tutoring Academy</title>
   <meta name="description" content="HN Stem Tutor — Premium STEM tutoring for school and college students in DHA Lahore and online." />
+  <meta name="theme-color" content="#1a2332" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --navy:#1a2332;
@@ -18,8 +19,9 @@
       --muted:#6b7280;
       --white:#ffffff;
       --max:1150px;
-      --radius:14px;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:16px;
+      --shadow:0 16px 40px rgba(0,0,0,.08);
+      --shadow-strong:0 24px 60px rgba(0,0,0,.14);
     }
 
     *{box-sizing:border-box}
@@ -32,54 +34,43 @@
       line-height:1.6;
     }
 
-    h1,h2,h3{
-      margin:0 0 .6rem;
-      font-family:"Playfair Display",serif;
-      line-height:1.2;
-      color:var(--navy);
-    }
+    h1,h2,h3{margin:0 0 .6rem; font-family:"Playfair Display",serif; line-height:1.15; color:var(--navy)}
+    p{margin:0 0 1rem}
+    a{color:inherit}
 
     .container{max-width:var(--max);margin:auto;padding:0 20px}
     .section{padding:80px 0}
     .section.alt{background:var(--light)}
     .tag{
       display:inline-block;
-      font-size:.85rem;
-      font-weight:700;
-      letter-spacing:.08em;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.1em;
       text-transform:uppercase;
       color:var(--teal);
-      margin-bottom:10px;
+      margin-bottom:12px;
     }
 
-    /* Navbar */
     .nav-wrap{
       position:sticky; top:0; z-index:1000;
       background:rgba(255,255,255,.92);
-      backdrop-filter:blur(8px);
+      backdrop-filter:blur(10px);
       border-bottom:1px solid #eceff4;
     }
-    .nav{
-      height:74px;
-      display:flex; align-items:center; justify-content:space-between;
-    }
+    .nav{min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:16px}
     .brand{
       font-family:"Playfair Display",serif;
       font-size:1.6rem;
       font-weight:700;
       color:var(--navy);
       text-decoration:none;
+      white-space:nowrap;
     }
     .brand span{color:var(--gold)}
-    .nav-links{
-      display:flex; gap:20px; flex-wrap:wrap;
-    }
-    .nav-links a{
-      text-decoration:none; color:var(--navy); font-weight:600; font-size:.95rem;
-    }
+    .nav-links{display:flex; gap:20px; flex-wrap:wrap; justify-content:flex-end}
+    .nav-links a{text-decoration:none; color:var(--navy); font-weight:700; font-size:.95rem}
     .nav-links a:hover{color:var(--gold)}
 
-    /* Hero */
     .hero{
       background:
         linear-gradient(rgba(26,35,50,.86), rgba(26,35,50,.86)),
@@ -89,42 +80,44 @@
       color:var(--white);
       padding:110px 0 90px;
     }
-    .hero h1{
-      color:var(--white);
-      font-size:clamp(2rem,4vw,3.4rem);
-      max-width:750px;
-    }
-    .hero p{
-      max-width:700px;
-      color:#e5e7eb;
-      font-size:1.1rem;
-      margin:10px 0 28px;
-    }
-    .cta-row{
-      display:flex; gap:14px; flex-wrap:wrap;
-    }
+    .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:30px; align-items:center}
+    .hero h1{color:var(--white); font-size:clamp(2.2rem,4vw,3.8rem); max-width:760px}
+    .hero p{max-width:700px; color:#e5e7eb; font-size:1.08rem; margin:12px 0 28px}
+    .cta-row{display:flex; gap:14px; flex-wrap:wrap}
     .btn{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:12px 20px;
       border-radius:10px;
-      font-weight:700;
+      font-weight:800;
       text-decoration:none;
       border:2px solid transparent;
       transition:.2s ease;
     }
-    .btn.primary{
-      background:var(--gold); color:#231f11;
-    }
-    .btn.primary:hover{transform:translateY(-2px)}
-    .btn.outline{
-      border-color:#ffffff66; color:var(--white);
-      background:transparent;
-    }
+    .btn.primary{background:var(--gold); color:#231f11}
+    .btn.primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-strong)}
+    .btn.outline{border-color:#ffffff66; color:var(--white); background:transparent}
     .btn.outline:hover{background:#ffffff12}
 
-    .grid{
-      display:grid; gap:20px;
+    .hero-panel{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow-strong);
     }
+    .hero-panel .mini{display:grid; gap:14px}
+    .mini-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      padding:16px;
+    }
+    .mini-card strong{display:block; font-size:1rem; margin-bottom:4px; color:#fff}
+    .mini-card span{color:#e5e7eb; font-size:.95rem}
+
+    .grid{display:grid; gap:20px}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .card{
@@ -134,18 +127,35 @@
       padding:22px;
       box-shadow:var(--shadow);
     }
-    .card h3{font-size:1.18rem;margin-bottom:6px}
+    .card h3{font-size:1.18rem; margin-bottom:8px}
     .muted{color:var(--muted)}
-
-    .list{
-      margin:12px 0 0;
-      padding-left:18px;
-    }
+    .list{margin:12px 0 0; padding-left:18px}
     .list li{margin:6px 0}
+    .accent{color:var(--teal); font-weight:800}
 
-    .accent{
-      color:var(--teal);
-      font-weight:700;
+    .stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:24px}
+    .stat{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      padding:16px;
+    }
+    .stat strong{display:block; color:#fff; font-size:1.25rem}
+    .stat span{color:#dbe3ee; font-size:.95rem}
+
+    .feature{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:18px;
+      border-radius:16px;
+      background:#fff;
+      border:1px solid #e7edf5;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:999px; margin-top:7px; flex:0 0 auto;
+      background:var(--gold);
+      box-shadow:0 0 0 5px rgba(201,168,76,.15);
     }
 
     .cta-band{
@@ -156,7 +166,7 @@
       text-align:center;
     }
     .cta-band h2{color:#fff}
-    .cta-band p{max-width:700px;margin:8px auto 20px}
+    .cta-band p{max-width:700px; margin:8px auto 20px}
 
     .contact p{margin:.35rem 0}
     .contact strong{color:var(--navy)}
@@ -167,28 +177,25 @@
       padding:32px 0;
       margin-top:50px;
     }
-    .footer-row{
-      display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
-      align-items:center;
-    }
+    .footer-row{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center}
     .footer-links{display:flex; gap:14px; flex-wrap:wrap}
-    .footer-links a{color:#cbd5e1;text-decoration:none}
+    .footer-links a{color:#cbd5e1; text-decoration:none}
     .footer-links a:hover{color:var(--gold)}
 
     @media (max-width: 900px){
-      .grid-3{grid-template-columns:1fr 1fr}
+      .grid-3,.stats,.hero-grid{grid-template-columns:1fr 1fr}
     }
     @media (max-width: 700px){
       .nav{height:auto; padding:14px 0; align-items:flex-start; flex-direction:column; gap:10px}
-      .grid-2,.grid-3{grid-template-columns:1fr}
+      .nav-links{justify-content:flex-start; gap:14px}
+      .grid-2,.grid-3,.stats,.hero-grid{grid-template-columns:1fr}
       .section{padding:65px 0}
+      .hero{padding:88px 0 72px}
       .cta-band{padding:26px}
     }
   </style>
 </head>
 <body>
-
-  <!-- Navbar -->
   <header class="nav-wrap">
     <nav class="nav container">
       <a href="#home" class="brand">HN <span>Stem</span></a>
@@ -203,35 +210,41 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero" id="home">
-    <div class="container">
-      <h1>Premium <span class="accent">STEM</span> Tutoring Academy</h1>
-      <p>
-        Welcome to <strong>HN Stem Tutor</strong> — concept-based and personalized tutoring
-        for school and college students in <strong>DHA Lahore</strong> and online.
-      </p>
-      <div class="cta-row">
-        <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdTqWbQFfLpJfJbFJQn8x5ZjJQn8x5ZjJQn8x5ZjJ/viewform" target="_blank" rel="noopener">Book Free Trial Class</a>
-        <a class="btn outline" href="https://wa.me/923134726441" target="_blank" rel="noopener">WhatsApp Me</a>
+    <div class="container hero-grid">
+      <div>
+        <h1>Premium <span class="accent">STEM</span> Tutoring Academy</h1>
+        <p>
+          Welcome to <strong>HN Stem Tutor</strong> — concept-based and personalized tutoring
+          for school and college students in <strong>DHA Lahore</strong> and online.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdTqWbQFfLpJfJbFJQn8x5ZjJQn8x5ZjJQn8x5ZjJ/viewform" target="_blank" rel="noopener">Book Free Trial Class</a>
+          <a class="btn outline" href="https://wa.me/923134726441" target="_blank" rel="noopener">WhatsApp Me</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>1-on-1</strong><span>Personalized support</span></div>
+          <div class="stat"><strong>Online</strong><span>Flexible sessions</span></div>
+          <div class="stat"><strong>Free Trial</strong><span>Start risk-free</span></div>
+        </div>
       </div>
+      <aside class="hero-panel">
+        <div class="mini">
+          <div class="mini-card"><strong>Who it’s for</strong><span>Students from Classes 1–10, O/A Levels, and entry test prep.</span></div>
+          <div class="mini-card"><strong>Teaching style</strong><span>Clear concepts, practice, and exam-focused guidance.</span></div>
+          <div class="mini-card"><strong>Languages</strong><span>English and Urdu support for better understanding.</span></div>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <!-- About -->
   <section class="section" id="about">
     <div class="container grid grid-2">
       <div>
         <span class="tag">Meet Your Tutor</span>
         <h2>Muhammad Hassan</h2>
-        <p class="muted">
-          I’m a STEM tutor from Lahore, Pakistan, helping students learn with confidence through
-          clear concepts, practice, and consistent support.
-        </p>
-        <p class="muted">
-          I started HN Stem Tutor to make quality tutoring more focused, student-friendly, and practical
-          for real exam success.
-        </p>
+        <p class="muted">I’m a STEM tutor from Lahore, Pakistan, helping students learn with confidence through clear concepts, practice, and consistent support.</p>
+        <p class="muted">I started HN Stem Tutor to make quality tutoring more focused, student-friendly, and practical for real exam success.</p>
       </div>
       <div class="card">
         <h3>Qualifications & Teaching Style</h3>
@@ -239,14 +252,13 @@
           <li>BS Food Science & Technology</li>
           <li>CGPA: 3.45</li>
           <li>Pre-Medical: A+</li>
-          <li>Concept-first teaching (not rote learning)</li>
+          <li>Concept-first teaching, not rote learning</li>
           <li>Simple explanations in English + Urdu</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section alt" id="services">
     <div class="container">
       <span class="tag">Services</span>
@@ -262,23 +274,21 @@
     </div>
   </section>
 
-  <!-- Why Choose -->
   <section class="section" id="why">
     <div class="container">
       <span class="tag">Why Choose HN Stem</span>
       <h2>Student-Centered Learning Experience</h2>
       <div class="grid grid-3" style="margin-top:20px">
-        <div class="card"><h3>Concept-Based Learning</h3></div>
-        <div class="card"><h3>Personalized 1-on-1 Sessions</h3></div>
-        <div class="card"><h3>Experienced Educator</h3></div>
-        <div class="card"><h3>Flexible Scheduling</h3></div>
-        <div class="card"><h3>Free Trial Class</h3></div>
-        <div class="card"><h3>Progress Reports</h3></div>
+        <div class="feature"><span class="dot"></span><div><h3>Concept-Based Learning</h3><p class="muted">Understand the why, not just the answer.</p></div></div>
+        <div class="feature"><span class="dot"></span><div><h3>Personalized 1-on-1 Sessions</h3><p class="muted">Lessons matched to your pace and goals.</p></div></div>
+        <div class="feature"><span class="dot"></span><div><h3>Experienced Educator</h3><p class="muted">Support from someone who understands student needs.</p></div></div>
+        <div class="feature"><span class="dot"></span><div><h3>Flexible Scheduling</h3><p class="muted">Choose timings that fit your routine.</p></div></div>
+        <div class="feature"><span class="dot"></span><div><h3>Free Trial Class</h3><p class="muted">Try before you commit.</p></div></div>
+        <div class="feature"><span class="dot"></span><div><h3>Progress Reports</h3><p class="muted">Track improvement with regular feedback.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
   <section class="section alt" id="experience">
     <div class="container">
       <span class="tag">Experience & Schools</span>
@@ -303,7 +313,6 @@
     </div>
   </section>
 
-  <!-- How it works -->
   <section class="section" id="how">
     <div class="container">
       <span class="tag">How It Works</span>
@@ -316,7 +325,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section alt">
     <div class="container">
       <div class="cta-band">
@@ -330,7 +338,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section class="section contact" id="contact">
     <div class="container grid grid-2">
       <div>

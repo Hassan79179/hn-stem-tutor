@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://hnstemtut-cxpqrxed.manus.space/sitemap.xml
+Sitemap: https://hassan79179.github.io/hn-stem-tutor/sitemap.xml
