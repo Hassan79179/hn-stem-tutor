@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hnstemtut-cxpqrxed.manus.space/sitemap.xml
